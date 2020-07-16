@@ -7,6 +7,9 @@
     
     <!-- MATERIALIZE CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- ICONS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <!-- INTERNAL CSS -->
     <link rel="stylesheet" href="style.css">
 
@@ -14,10 +17,13 @@
 <body>
     
     <div id="main-container" class="container">
-        <div class="row center">
-            <div id="todo-input" class="input-field col s6">
+        <div id="input-row" class="row center">
+            <div id="todo-input" class="input-field col s8">
                 <input id="todo" type="text" class="validate">
                 <label for="todo">Enter your todos</label>
+            </div>
+            <div id="add-btn" class="col">
+                <a class="btn-floating waves-effect waves-light blue"><i class="material-icons">add</i></a>
             </div>
         </div>
     </div>

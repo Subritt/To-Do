@@ -4,8 +4,13 @@
     height: 660px; */
 }
 
-#todo-input {
+#input-row {
     margin-left: 25%;
     margin-right: 25%;
+    margin-top: 20px;
     /* background: #FFFFFF; */
+}
+
+#add-btn {
+    margin: 10px;
 }
