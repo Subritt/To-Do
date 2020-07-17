@@ -14,3 +14,14 @@
 #add-btn {
     margin: 10px;
 }
+
+#collection-row {
+    margin-left: 15%;
+    margin-right: 25%;
+    margin-top: 20px;
+    /* background: #FFFFFF; */
+}
+
+#todo-list {
+    word-wrap: break-word;
+}
