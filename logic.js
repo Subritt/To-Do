@@ -78,7 +78,7 @@ function updateLocalStorage() {
 
 // Initialize app
 function init() {
-    listElement.innerHTML = `<li id="todo-header" class="collection-header center"><h5>To Do</h5></li>`;
+    listElement.innerHTML = `<li id="todo-header" class="collection-header center"><h5>Your To Dos</h5></li>`;
 
     lists.forEach(addListDOM);
 }
