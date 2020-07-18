@@ -25,3 +25,8 @@
 #todo-list {
     word-wrap: break-word;
 }
+
+#delete-icon {
+    color: #b71c1c;
+    cursor: pointer;
+}

@@ -19,14 +19,15 @@ var addToLocalStorageString = (name, value, delimiter) => {
 
 // function to get To Dos
 let getInput = () => {
-    addToLocalStorageString('list', input.value, "^^^");
+    if (input.value !== "") {
+        addToLocalStorageString('list', input.value, "^^^");
+    }
     return;
 }
 
 // funciton to show To Dos
 function addLists(){
-    list.innerHTML = "";
-
+    list.innerHTML = `<li class="collection-header center"><h5>To Do</h5></li>`;
     let inputValues = localStorage.getItem('list');
     console.log("localstorage: " + inputValues);
 
@@ -34,11 +35,11 @@ function addLists(){
         return;
     }
 
-    getInput();
+    // getInput();
     
     inputValues.split('^^^').forEach((v) => {
         list.innerHTML += `
-        <li class="collection-item" style="word-wrap: break-word;">${v}</li>
+        <li class="collection-item"><div>${v}<a class="secondary-content"><i id="delete-icon" class="material-icons">delete_forever</i></a></div></li>
         `;
     });
     return;
@@ -47,9 +48,10 @@ function addLists(){
 // event listener
 addButton.addEventListener('click', () => {
     getInput();
+    input.value = "";
     addLists();
 });
 
 window.addEventListener('DOMContentLoaded', (e) => {
-    // addLists();
+    addLists();
 });
