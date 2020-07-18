@@ -2,20 +2,20 @@ const input = document.getElementById('todo');
 const list = document.getElementById('todo-list');
 const addButton = document.getElementById('add-btn');
 
-// helper function to add value to local storage
-var addToLocalStorageString = (name, value, delimiter) => {
+/**
+ * const dummyLists [
+ *      {id: 1, todo: 'random_task1'},
+ *      {id: 2, todo: 'random_task2'},
+ *      {id: 2, todo: 'random_task2'}
+ * ];
+ */
 
-	// Get the existing data
-	var existing = localStorage.getItem(name);
+ const localStorageLists = JSON.parse(
+    localStorage.getItem('lists')
+ );
 
-	// If no existing data, use the value by itself
-	// Otherwise, add the new value to it
-	var data = existing ? existing + delimiter + value : value;
-
-	// Save back to localStorage
-	localStorage.setItem(name, data);
-
-};
+ let lists = 
+    localStorage.getItem('lists') !== null ? localStorageLists : [];
 
 // function to get To Dos
 let getInput = () => {
@@ -35,23 +35,16 @@ function addLists(){
         return;
     }
 
-    // getInput();
-    
     inputValues.split('^^^').forEach((v) => {
         list.innerHTML += `
-        <li class="collection-item"><div>${v}<a class="secondary-content"><i id="delete-icon" class="material-icons">delete_forever</i></a></div></li>
+        <li class="collection-item">
+            <div id="todo-div">${v}
+                <a onclick="splicedList();" id="delete-btn" class="secondary-content">
+                    <i id="delete-icon" class="material-icons">delete_forever</i>
+                </a>
+            </div>
+        </li>
         `;
     });
     return;
 }
-
-// event listener
-addButton.addEventListener('click', () => {
-    getInput();
-    input.value = "";
-    addLists();
-});
-
-window.addEventListener('DOMContentLoaded', (e) => {
-    addLists();
-});
