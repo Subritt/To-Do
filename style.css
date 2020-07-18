@@ -30,3 +30,9 @@
     color: #b71c1c;
     cursor: pointer;
 }
+
+#todo-header {
+    font-weight: bold;
+    font-family: cursive;
+    background-color: aliceblue;
+}
